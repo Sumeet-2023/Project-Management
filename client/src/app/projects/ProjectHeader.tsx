@@ -4,10 +4,10 @@ import React, { useState } from 'react'
 
 type Props = {
     activeTab: string;
-    setActiveTag: (tabName : string) => void
+    setActiveTab: (tabName : string) => void
 }
 
-const ProjectHeader = ({activeTab, setActiveTag}: Props) => {
+const ProjectHeader = ({activeTab, setActiveTab}: Props) => {
   const [isModalNewProjectOpen, setIsModalNewProjectOpen] = useState(false);
 
 
@@ -33,25 +33,25 @@ const ProjectHeader = ({activeTab, setActiveTag}: Props) => {
           <TabButton
             name="Board"
             icon={<Grid3x3 className="h-5 w-5" />}
-            setActiveTab={setActiveTag}
+            setActiveTab={setActiveTab}
             activeTab={activeTab}
           />
           <TabButton
             name="List"
             icon={<List className="h-5 w-5" />}
-            setActiveTab={setActiveTag}
+            setActiveTab={setActiveTab}
             activeTab={activeTab}
           />
           <TabButton
             name="Timeline"
             icon={<Clock className="h-5 w-5" />}
-            setActiveTab={setActiveTag}
+            setActiveTab={setActiveTab}
             activeTab={activeTab}
           />
           <TabButton
             name="Table"
             icon={<Table className="h-5 w-5" />}
-            setActiveTab={setActiveTag}
+            setActiveTab={setActiveTab}
             activeTab={activeTab}
           />
         </div>
