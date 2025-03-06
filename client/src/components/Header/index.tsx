@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 
 type Props = {
   name: string;
-  buttonComponent?: any;
+  buttonComponent?: React.ReactNode;
   isSmallText?: boolean;
 };
 
@@ -17,6 +17,6 @@ const Header = ({ name, buttonComponent, isSmallText = false }: Props) => {
       {buttonComponent}
     </div>
   );
-}
+};
 
-export default Header
+export default Header;
