@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   backend:
     build:
@@ -9,6 +7,7 @@ services:
       - "8000:8000"
     environment:
       - DATABASE_URL=postgresql://postgres:HelloWorld@007@db:5432/mydb
+      - PORT=8000
     depends_on:
       - db
     volumes:
@@ -20,7 +19,9 @@ services:
       context: ./client
       dockerfile: Dockerfile
     ports:
-      - "8080:3000"
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_BASE_URL=http://localhost:8000/
     depends_on:
       - backend
     volumes:
