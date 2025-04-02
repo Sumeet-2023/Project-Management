@@ -39,6 +39,41 @@ This is a full-stack project management application built with **Next.js** on th
 
 ---
 
+## Running with Docker
+
+### Build and Start Containers:
+
+- From the root of the project, run:
+
+```
+docker-compose up --build
+```
+
+### Access the Application:
+
+- Frontend: http://localhost:3000
+- Backend: http://localhost:8000
+
+### Stopping the Containers:
+
+- To stop the containers, press Ctrl+C in the terminal or run:
+
+```
+docker-compose down
+```
+
+### Troubleshooting
+
+- **Database Connection**: Ensure the PostgreSQL container is running and that the DATABASE_URL in your backend configuration is correct.
+- **Port Conflicts**: Verify that ports 5432, 8000, and 3000 are not in use by other applications.
+- **Rebuild Images**: If you update Dockerfiles or configuration settings, rebuild the containers with:
+
+```
+docker-compose up --build
+```
+
+---
+
 ## Installation
 
 ### Prerequisites
@@ -192,36 +227,3 @@ server/
 - `npm run seed`: Populate the database with sample data.
 
 ---
-
-## Running with Docker
-
-### Build and Start Containers:
-
-- From the root of the project, run:
-
-```
-docker-compose up --build
-```
-
-### Access the Application:
-
-- Frontend: http://localhost:8080
-- Backend: http://localhost:8000
-
-### Stopping the Containers:
-
-- To stop the containers, press Ctrl+C in the terminal or run:
-
-```
-docker-compose down
-```
-
-### Troubleshooting
-
-- **Database Connection**: Ensure the PostgreSQL container is running and that the DATABASE_URL in your backend configuration is correct.
-- **Port Conflicts**: Verify that ports 5432, 8000, and 8080 are not in use by other applications.
-- **Rebuild Images**: If you update Dockerfiles or configuration settings, rebuild the containers with:
-
-```
-docker-compose up --build
-```
