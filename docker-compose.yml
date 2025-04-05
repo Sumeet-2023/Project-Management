@@ -9,7 +9,8 @@ services:
       - DATABASE_URL=postgresql://postgres:HelloWorld@007@db:5432/mydb
       - PORT=8000
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     volumes:
       - ./server:/home/backend
     command: sh -c "npx prisma migrate dev && npm run seed && npm run dev"
@@ -40,6 +41,11 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 3s
+      timeout: 5s
+      retries: 5
 
 volumes:
   pgdata:
